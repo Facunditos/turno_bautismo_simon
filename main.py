@@ -20,16 +20,16 @@ service = Service('/usr/bin/chromedriver')
 mariana_num = os.environ["MARIANA_NUM"]
 n_busqueda = 0
 
-def enviar_msg(mensage):
+def enviar_msg(mensaje):
     while True:
         # Si hay un error se espera 30 segundos antes de volver a enviarlo
         try:
-            #kit.sendwhatmsg(mariana_num, mensage, hora, minuto+1)
-            kit.sendwhatmsg_instantly(mariana_num,mensage,wait_time=10,tab_close=True,close_time=5)
+            #kit.sendwhatmsg(mariana_num, mensaje, hora, minuto+1)
+            kit.sendwhatmsg_instantly(mariana_num,mensaje,wait_time=10,tab_close=True,close_time=5)
             print("Mensage programado exitosamente!")
             break
         except Exception as e:
-            print(f"Ocurrió un error al enviar el mensage: {e}. Se esperan 30 segundos para volver a intertarlo")
+            print(f"Ocurrió un error al enviar el mensaje: {e}. Se esperan 30 segundos para volver a intertarlo")
             sleep(30)
 
 def buscar_turno():
